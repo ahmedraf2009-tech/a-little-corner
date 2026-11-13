@@ -1,0 +1,204 @@
+:root {
+  --paper: #fbf6f0;
+  --paper-deep: #f2e8e0;
+  --ink: #493b37;
+  --muted: #8c7c75;
+  --rose: #b97980;
+  --rose-dark: #965e67;
+  --line: #e9dbd2;
+  --white: #fffdfa;
+  --sage: #a4a995;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.65;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+::selection { background: #ead1d0; color: var(--ink); }
+
+.site-header {
+  width: min(1120px, calc(100% - 56px));
+  margin: 0 auto;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; letter-spacing: -.02em; }
+.wordmark span { color: var(--rose); padding-left: 6px; }
+nav { display: flex; gap: 28px; color: var(--muted); font-size: 12px; }
+nav a, footer a { transition: color .2s ease; }
+nav a:hover, footer a:hover { color: var(--rose-dark); }
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 620px;
+  padding: 112px 24px 94px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.eyebrow {
+  margin: 0 0 17px;
+  color: var(--rose-dark);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+h1 { margin: 0; font-size: clamp(48px, 8vw, 86px); line-height: 1.06; letter-spacing: -.055em; }
+h1 span { color: var(--rose); }
+.hero-copy { max-width: 430px; margin: 25px 0 29px; color: var(--muted); font-size: 14px; }
+.primary-button, .secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 22px;
+  background: var(--rose);
+  color: white;
+  font-size: 11px;
+  letter-spacing: .025em;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.primary-button:hover, .secondary-button:hover { transform: translateY(-2px); background: var(--rose-dark); box-shadow: 0 8px 20px rgba(150, 94, 103, .16); }
+.hero-footnote { margin: 25px 0 0; color: #a28f86; font-size: 10px; letter-spacing: .08em; }
+.hero-spark { position: absolute; z-index: -1; color: #d9b9ae; pointer-events: none; }
+.hero-spark-one { top: 22%; right: 17%; font-size: 39px; transform: rotate(12deg); }
+.hero-spark-two { left: 18%; bottom: 24%; font-size: 34px; color: #c4b7a7; }
+
+.section { padding: 96px 24px; }
+.memories-section { background: var(--white); }
+.section-heading { max-width: 650px; margin: 0 auto 48px; text-align: center; }
+.section-heading h2, .birthday-section h2 { margin: 0 0 13px; font-size: clamp(32px, 5vw, 47px); line-height: 1.15; letter-spacing: -.025em; }
+.section-heading > p:last-child { max-width: 500px; margin: 0 auto; color: var(--muted); font-size: 13px; }
+.photo-grid { width: min(900px, 100%); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; align-items: start; }
+.photo-card { margin: 0; padding: 11px 11px 14px; background: var(--white); border: 1px solid #eee4dd; box-shadow: 0 12px 30px rgba(86, 64, 54, .055); }
+.photo-card-one { transform: rotate(-1.7deg); }
+.photo-card-two { margin-top: 25px; transform: rotate(1.3deg); }
+.photo-card-three { transform: rotate(-.8deg); }
+.photo-placeholder {
+  min-height: 280px;
+  padding: 18px;
+  background: #f1e6df;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #9b8580;
+  position: relative;
+}
+.photo-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+.photo-card-two .photo-image {
+  height: auto;
+  object-fit: contain;
+  background: #f1e6df;
+}
+.photo-card-two .photo-placeholder { background: #eee9e3; }
+.photo-card-three .photo-placeholder { background: #ecebe3; }
+.photo-number { position: absolute; top: 13px; left: 14px; font-size: 9px; letter-spacing: .1em; color: #aa9189; }
+.photo-symbol { font-family: 'Playfair Display', serif; color: #c28e8c; font-size: 31px; line-height: 1; }
+.photo-placeholder p { margin: 12px 0 0; font-family: 'Playfair Display', serif; font-size: 16px; line-height: 1.45; }
+.photo-card figcaption { padding-top: 11px; text-align: center; color: #88766f; font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; }
+.small-note { margin: 27px 0 0; text-align: center; color: #a18f87; font-size: 10px; }
+
+.little-things-section { background: var(--paper-deep); }
+.note-card {
+  width: min(500px, 100%);
+  margin: 0 auto;
+  padding: 44px 38px 39px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(90, 62, 51, .065);
+}
+.jar-icon { color: var(--rose); font-size: 35px; line-height: 1; }
+.card-label { margin: 12px 0 9px; color: var(--rose-dark); font-size: 9px; font-weight: 700; letter-spacing: .2em; }
+.note-card h3 { margin: 8px 0; font-size: 27px; }
+.note-output { min-height: 58px; max-width: 340px; margin: 15px auto 21px; color: var(--muted); font-size: 13px; }
+.secondary-button { padding: 11px 19px; }
+.note-hint { margin: 16px 0 0; color: #a18f87; font-size: 10px; }
+
+.birthday-section { text-align: center; }
+.birthday-letter {
+  position: relative;
+  width: min(620px, 100%);
+  margin: 34px auto 0;
+  padding: 38px 46px 35px;
+  background: rgba(255, 253, 250, .64);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 17px;
+  box-shadow: 0 12px 34px rgba(90, 62, 51, .035);
+}
+.letter-flower { margin-bottom: 7px; color: var(--rose); font-size: 22px; }
+.birthday-letter p { margin: 10px 0 15px; }
+.birthday-letter .letter-greeting { color: var(--ink); font-size: 23px; }
+.signature { display: block; margin-top: 25px; color: var(--rose-dark); font-size: 15px; font-style: italic; }
+
+footer {
+  min-height: 80px;
+  padding: 20px 28px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 10px;
+}
+footer p { margin: 0; }
+
+@media (max-width: 700px) {
+  .site-header { width: calc(100% - 34px); min-height: 70px; gap: 12px; }
+  .wordmark { font-size: 17px; }
+  nav { gap: 13px; font-size: 10px; }
+  .hero { min-height: 570px; padding: 90px 22px 82px; }
+  .hero-spark-one { top: 17%; right: 8%; font-size: 30px; }
+  .hero-spark-two { left: 8%; bottom: 18%; font-size: 27px; }
+  .hero-copy { max-width: 350px; font-size: 13px; }
+  .section { padding: 76px 20px; }
+  .section-heading { margin-bottom: 38px; }
+  .photo-grid { grid-template-columns: 1fr; width: min(330px, 100%); gap: 23px; }
+  .photo-card { width: 100%; }
+  .photo-card-two { margin-top: 0; }
+  .photo-placeholder { min-height: 275px; }
+  .note-card { padding: 36px 22px 32px; }
+  .birthday-letter { padding: 31px 22px; font-size: 16px; }
+  footer { flex-direction: column; justify-content: center; text-align: center; }
+}
+
+@media (max-width: 380px) {
+  .site-header { flex-direction: column; justify-content: center; padding: 13px 0 11px; }
+  nav { gap: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
